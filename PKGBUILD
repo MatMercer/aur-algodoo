@@ -16,7 +16,10 @@ url=""
 license=('custom:Algodoo')
 groups=()
 depends=('wine'
-	 'innoextract')
+	 'innoextract'
+	 'lib32-nvidia-utils'
+	 'lib32-mpg123'
+	 'winetricks')
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -31,23 +34,32 @@ _alg="${_pkgname}_${_pkgver}-Win32.exe"
 _wine="wine-1.8-rc1"
 source=("${_alg}::http://www.algodoo.com/download"
 	"LICENSE"
+	"algodoo"
 	)
 noextract=()
 sha256sums=("3e65d18c63b20c17aaedd5c96f9751d914dc5e024ef001fc5cf569b94255caa4"
 	    "3a46622a459bd0148d52988a7d5bcd7432facfe6af30b33a2f6db5f4f04f5bb2"
+	    "6ca035ad75ac56af22c77d553e3f243d049dc7695f0ff913cb4e0aff70aad113"
 	    )
 validpgpkeys=()
 
 package() {
 	# Create common folders
-	mkdir -p "${pkgdir}/usr/share/"
+	mkdir -p "$pkgdir/usr/share/algodoo"
 
 	# Extract installer using innoextract
-	innoextract "${_alg}" --output-dir "${pkgdir}/usr/share/"
+	innoextract "${_alg}" --output-dir "$pkgdir/usr/share/algodoo"
 
 	# Correct filesystem perms
-	find "${pkgdir}" -type d -execdir chmod 755 {} +
+	find "$pkgdir"/usr/share -type f -exec chmod 644 "{}" \;
+	find "$pkgdir"/usr/share -type d -exec chmod 755 "{}" \;
 
 	# Install the license
-	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+	# Install the executable
+	install -Dm755 algodoo "$pkgdir/usr/bin/algodoo"
+
+	# Core fonts, needed for Algodoo
+	winetricks corefonts
 }

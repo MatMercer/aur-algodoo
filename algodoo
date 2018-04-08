@@ -1,0 +1,18 @@
+#!/bin/bash
+
+progName="algodoo"
+progRealPath="/usr/share/$progName/app"
+progHome="$HOME/.$progName"
+progBin="Algodoo.exe"
+
+unset WINEPREFIX
+if [ ! -d $progHome ] ; then
+   mkdir -p $progHome
+   ln -s $progRealPath/* $progHome/
+
+   rm $progHome/scenes
+   cp -r $progRealPath/scenes $progHome/
+fi
+
+wine $progHome/$progBin "$@"
+
