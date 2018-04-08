@@ -20,6 +20,6 @@ if [ ! -d $progHome ] ; then
 fi
 
 # msvcp90 MUST be overriden https://www.reddit.com/r/linuxquestions/comments/6g077y/wine_error_class_not_registered/dqn9c8k/
-export WINEDLLOVERRIDES="msvcp90=n,b"
+export WINEDLLOVERRIDES="msvcp90=n"
 wine $progHome/$progBin "$@"
 

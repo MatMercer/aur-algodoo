@@ -29,7 +29,7 @@ source=("${_alg}::http://www.algodoo.com/download"
 	)
 sha256sums=("3e65d18c63b20c17aaedd5c96f9751d914dc5e024ef001fc5cf569b94255caa4"
 	    "3a46622a459bd0148d52988a7d5bcd7432facfe6af30b33a2f6db5f4f04f5bb2"
-	    "b4780d3901972c92582a3f59c842a7870ae950dc6efc92ca51524fb200e68092"
+	    "7d29ce62408ee798a56110575474b2ee69bc73b88a7712d864b141ad7dc6fca0"
 	    "e4afe153053db562210ef2c11d92a17ec3763b39426efc3e92e74694a7556147"
 	    "0f7e995cd90df87236404db4c28789e23eef7341cc47f321f1ea6ce30fa913f1"
 	    )
@@ -57,5 +57,8 @@ package() {
 	install -Dm644 algodoo.desktop "$pkgdir/usr/share/applications/algodoo.desktop"
 
 	# Core fonts, needed for Algodoo
-	sudo -H -u $USER bash -c 'winetricks corefonts'
+	sudo -H -u $USER bash -c 'winetricks -q corefonts'
+
+	# C++ 2008 native runtime, needed for Algodoo
+	sudo -H -u $USER bash -c 'winetricks -q vcrun2008'
 }
