@@ -61,5 +61,5 @@ package() {
 	install -Dm755 algodoo "$pkgdir/usr/bin/algodoo"
 
 	# Core fonts, needed for Algodoo
-	winetricks corefonts
+	sudo -H -u $USER bash -c 'winetricks corefonts'
 }
