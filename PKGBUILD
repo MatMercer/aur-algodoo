@@ -39,7 +39,7 @@ source=("${_alg}::http://www.algodoo.com/download"
 noextract=()
 sha256sums=("3e65d18c63b20c17aaedd5c96f9751d914dc5e024ef001fc5cf569b94255caa4"
 	    "3a46622a459bd0148d52988a7d5bcd7432facfe6af30b33a2f6db5f4f04f5bb2"
-	    "6ca035ad75ac56af22c77d553e3f243d049dc7695f0ff913cb4e0aff70aad113"
+	    "ae8496798c0f96ffab0d0cf699d920ccb338798b7508bd8159cd387ea34a98c0"
 	    )
 validpgpkeys=()
 

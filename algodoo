@@ -14,5 +14,6 @@ if [ ! -d $progHome ] ; then
    cp -r $progRealPath/scenes $progHome/
 fi
 
+export WINEDLLOVERRIDES="msvcp90=n,b"
 wine $progHome/$progBin "$@"
 
