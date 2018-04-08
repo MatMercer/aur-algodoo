@@ -34,7 +34,7 @@ _alg="${_pkgname}_${_pkgver}-Win32.exe"
 _wine="wine-1.8-rc1"
 source=("${_alg}::http://www.algodoo.com/download"
 	"LICENSE"
-	"algodoo"
+	"algodoo.sh"
 	"algodoo.desktop"
 	"algodoo.png"
 	)
@@ -61,8 +61,8 @@ package() {
 	# Install the license
 	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
-	# Install the executable
-	install -Dm755 algodoo "$pkgdir/usr/bin/algodoo"
+	# Install the script
+	install -Dm755 algodoo.sh "$pkgdir/usr/bin/algodoo"
 
 	# Install the icon
 	install -Dm644 algodoo.png "$pkgdir/usr/share/pixmaps/algodoo.png"
