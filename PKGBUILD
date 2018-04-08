@@ -18,7 +18,6 @@ groups=()
 depends=('wine'
 	 'innoextract'
 	 'lib32-nvidia-utils'
-	 'lib32-mpg123'
 	 'winetricks')
 makedepends=()
 checkdepends=()
