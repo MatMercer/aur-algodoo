@@ -9,7 +9,7 @@ _pkgname=Algodoo
 pkgver=2.1.0
 _pkgver=2_1_0
 pkgrel=2
-pkgdesc="Algodoo is a unique 2D-simulation software from Algoryx Simulation AB (Using Wine)."
+pkgdesc="a unique 2D-simulation software from Algoryx Simulation AB (Using Wine)."
 arch=("any")
 url="http://algodoo.com"
 license=('custom:Algodoo')
@@ -20,7 +20,6 @@ depends=('wine'
 	 'desktop-file-utils')
 
 _alg="${_pkgname}_${_pkgver}-Win32.exe"
-_wine="wine-1.8-rc1"
 source=("http://www.algodoo.com/download/${_alg}"
 	"LICENSE"
 	"algodoo.sh"
