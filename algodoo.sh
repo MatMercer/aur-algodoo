@@ -7,13 +7,13 @@ progBin="Algodoo.exe"
 # unset WINEPREFIX
 # if [ ! -d $progHome ] ; then
 #    mkdir -p $progHome
-# 
+#
 #    # User folders
 #    find $progRealPath -maxdepth 1 -type d -exec cp -r {} $progHome/ \;
-# 
+#
 #    # User configs
 #    find $progRealPath -maxdepth 1 -type f -name "*.cfg" -exec cp {} $progHome/ \;
-# 
+#
 #    # Read only files
 #    ln -s $progRealPath/*.{txt,dll,exe} $progHome
 # fi

@@ -21,7 +21,7 @@ makedepends=(
 	 'winetricks'
 )
 optdepends=(
-	 'lib32-nvidia-utils: 32 bits NVIDIA driver for Algodoo '
+	 'lib32-nvidia-utils: 32 bits NVIDIA driver for Algodoo'
 )
 _alg="${_pkgname}_${_pkgver}-Win32.exe"
 source=("http://www.algodoo.com/download/${_alg}"
