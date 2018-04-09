@@ -21,7 +21,7 @@ depends=('wine'
 
 _alg="${_pkgname}_${_pkgver}-Win32.exe"
 _wine="wine-1.8-rc1"
-source=("${_alg}::http://www.algodoo.com/download"
+source=("http://www.algodoo.com/download/${_alg}"
 	"LICENSE"
 	"algodoo.sh"
 	"algodoo.desktop"
