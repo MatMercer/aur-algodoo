@@ -10,10 +10,10 @@ url="http://algodoo.com"
 license=('custom:Algodoo')
 depends=('wine'
 	 'desktop-file-utils'
+	 'winetricks'
 )
 makedepends=(
 	 'innoextract'
-	 'winetricks'
 )
 optdepends=(
 	 'lib32-nvidia-utils: 32 bits NVIDIA driver for Algodoo'
@@ -27,8 +27,8 @@ source=("http://www.algodoo.com/download/${_alg}"
 	)
 sha256sums=("3e65d18c63b20c17aaedd5c96f9751d914dc5e024ef001fc5cf569b94255caa4"
 	    "3a46622a459bd0148d52988a7d5bcd7432facfe6af30b33a2f6db5f4f04f5bb2"
-	    "1bc6cd30cbd41bf6006ab400eb95b456673d5e2220381a5d4c72e6fc7b4736fc"
-	    "e4afe153053db562210ef2c11d92a17ec3763b39426efc3e92e74694a7556147"
+	    "12fe213da742a3bea365c2a345a610262bf23524e498e3485900a55016f5f984"
+	    "19f2775207fe72643ff4a787afb478c8d511b7eb25f632f54dc229a064b1c41c"
 	    "0f7e995cd90df87236404db4c28789e23eef7341cc47f321f1ea6ce30fa913f1"
 	    )
 package() {
@@ -52,10 +52,4 @@ package() {
 
 	# Install the .desktop
 	install -Dm644 algodoo.desktop "$pkgdir/usr/share/applications/algodoo.desktop"
-
-	# Core fonts, needed for Algodoo
-	sudo -H -u $USER bash -c 'winetricks -q corefonts'
-
-	# C++ 2008 native runtime, needed for Algodoo
-	sudo -H -u $USER bash -c 'winetricks -q vcrun2008'
 }
