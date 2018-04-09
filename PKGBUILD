@@ -40,8 +40,7 @@ package() {
 	innoextract "${_alg}" --output-dir "$pkgdir/usr/share/algodoo"
 
 	# Correct filesystem perms
-	find "$pkgdir"/usr/share -type f -exec chmod 644 "{}" \;
-	find "$pkgdir"/usr/share -type d -exec chmod 755 "{}" \;
+	chmod -R u=rwX,go=rX "$pkgdir"/usr/share
 
 	# Install the license
 	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
