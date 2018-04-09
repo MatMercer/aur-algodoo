@@ -8,17 +8,21 @@ pkgname=algodoo
 _pkgname=Algodoo
 pkgver=2.1.0
 _pkgver=2_1_0
-pkgrel=2
+pkgrel=3
 pkgdesc="a unique 2D-simulation software from Algoryx Simulation AB (Using Wine)."
 arch=("any")
 url="http://algodoo.com"
 license=('custom:Algodoo')
 depends=('wine'
+	 'desktop-file-utils'
+)
+makedepends=(
 	 'innoextract'
-	 'lib32-nvidia-utils'
 	 'winetricks'
-	 'desktop-file-utils')
-
+)
+optdepends=(
+	 'lib32-nvidia-utils: 32 bits NVIDIA driver for Algodoo '
+)
 _alg="${_pkgname}_${_pkgver}-Win32.exe"
 source=("http://www.algodoo.com/download/${_alg}"
 	"LICENSE"
