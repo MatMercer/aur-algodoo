@@ -26,3 +26,4 @@ algodoo
 ## Special thanks
 
 Thank you /u/katataru! https://www.reddit.com/r/linuxquestions/comments/6g077y/wine_error_class_not_registered/
+Thanks to the Arch Linux community for making this project possible: https://bbs.archlinux.org/viewtopic.php?pid=1779076#p1779076
