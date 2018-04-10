@@ -1,9 +1,9 @@
 # Maintainer: Mateus Mercer <mateusmercer@gmail.com>
-pkgname=algodoo
+pkgname=algodoo-wine
 _pkgname=Algodoo
 pkgver=2.1.0
 _pkgver=2_1_0
-pkgrel=3
+pkgrel=1
 pkgdesc="A unique 2D-simulation software from Algoryx Simulation AB (Using Wine)."
 arch=("any")
 url="http://algodoo.com"
